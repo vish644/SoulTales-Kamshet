@@ -16,7 +16,7 @@ const stackImages = [
 const Booking = () => {
   return (
     <section className="w-full bg-white px-5 py-10 md:px-10 lg:px-16 relative  flex items-center">
-      <div className="bg-white w-full max-w-[1440px] mx-auto flex justify-center lg:justify-end">
+      <div className="bg-white w-full max-w-360 mx-auto flex justify-center lg:justify-end">
         <div className="w-full lg:w-[90%] bg-pink px-5 py-12 md:px-10 md:py-16 lg:py-20 lg:px-16 relative overflow-visible rounded-2xl lg:rounded-none min-h-screen">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-10">
             {/* Left - animated polaroid stack, bleeds onto white area on large screens */}

@@ -36,7 +36,7 @@ const infoItems = [
 const PracticalDetails = () => {
   return (
     <section className="w-full bg-white px-5 py-12 md:px-10 md:py-16 lg:px-20 lg:py-20">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto grid max-w-360 grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Left column */}
         <div className="flex flex-col">
           <h2 className="font-body text-[28px] font-bold leading-tight text-black md:text-[32px] lg:text-[38px] leading-12 tracking-normal">

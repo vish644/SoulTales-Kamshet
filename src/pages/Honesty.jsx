@@ -7,7 +7,7 @@ const Honesty = () => {
   return (
     <section className="grid w-full grid-cols-1 bg-primary lg:grid-cols-2">
       {/* Left column - text content */}
-      <div className="flex flex-col justify-center px-5 py-14 md:px-10 md:py-20 lg:px-20 lg:py-24">
+      <div className="flex flex-col justify-center px-5 py-14 md:px-10 md:py-20 lg:px-20 lg:py-24 max-w-360">
         <h2 className="font-body text-[26px] font-bold leading-tight text-white md:text-[32px] lg:text-[38px] leading-12">
           This Isn't For Every Child
         </h2>
