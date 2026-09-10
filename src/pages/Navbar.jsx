@@ -50,7 +50,7 @@ const Navbar = () => {
       <TopBar />
 
       {/* Navbar Options  */}
-      <div className="max-w-360 mx-auto flex items-center justify-between bg-white py-1 px-4 lg:px-8">
+      <div className="max-w-360 mx-auto flex items-center justify-between bg-white py-2 px-4 lg:px-8">
         <SvgImage
           svgImage={Logo}
           label="Logo"
@@ -64,7 +64,7 @@ const Navbar = () => {
             <li key={name}>
               <a
                 href={href}
-                className="font-body text-sm font-medium text-black hover:text-secondary transition-colors"
+                className="font-body text-base font-medium text-black hover:text-secondary transition-colors"
               >
                 {name}
               </a>

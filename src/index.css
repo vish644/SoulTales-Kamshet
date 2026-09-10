@@ -12,12 +12,13 @@
   --color-secondary: #ff6b35;
   --color-green: #2c6a4f;
   --color-pink: #fff8e7;
-  --color-muted: #ffffff99;
+  --color-text-highlight: #1A3952;
 }
 
 @layer base {
   html,
   body {
+    /* Safety net: prevents any residual horizontal scrollbar. */
     overflow-x: hidden;
   }
 
@@ -25,22 +26,15 @@
     font-family: var(--font-body);
   }
 
-  /* Mobile */
+  /* Mobile (default, < 768px) */
   h1 {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0%;
-    text-transform: capitalize;
-  }
 
-  h2 {
-    font-family: var(--font-heading);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    color: var(--color-secondary);
+    text-transform: capitalize;
   }
 
   p {
@@ -50,16 +44,11 @@
     font-weight: 400;
   }
 
-  /* Tablet >= 768px */
+  /* Tablet (>= 768px) */
   @media (min-width: 768px) {
     h1 {
       font-size: 28px;
       line-height: 38px;
-    }
-
-    h2 {
-      font-size: 22px;
-      line-height: 30px;
     }
 
     p {
@@ -67,16 +56,12 @@
     }
   }
 
-  /* Desktop >= 1024px */
+  /* Desktop / design size (>= 1024px) */
   @media (min-width: 1024px) {
     h1 {
       font-size: var(--text-h1);
       line-height: 62px;
-    }
-
-    h2 {
-      font-size: 24px;
-      line-height: 32px;
+      /* not a ratio like 1.3 — this is an exact pixel value per your spec */
     }
 
     p {

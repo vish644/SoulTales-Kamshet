@@ -29,13 +29,54 @@ import React from "react";
  * />
  */
 
+// const SvgImage = ({
+//   svgImage,
+//   label,
+//   width = "w-10",
+//   height = "h-10",
+//   size,
+// }) => {
+//   return (
+//     <div className={`${width} ${height}`}>
+//       <img
+//         src={svgImage}
+//         alt={label}
+//         className={`w-full h-full object-contain ${size || ""}`}
+//       />
+//     </div>
+//   );
+// };
+
+// export default SvgImage;
+
 const SvgImage = ({
   svgImage,
   label,
   width = "w-10",
   height = "h-10",
   size,
+  color, // NEW — pass a bg-* class like "bg-secondary" or "bg-white"
 }) => {
+  if (color) {
+    return (
+      <div
+        className={`${width} ${height} ${color} ${size || ""}`}
+        style={{
+          WebkitMaskImage: `url(${svgImage})`,
+          maskImage: `url(${svgImage})`,
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
+        role="img"
+        aria-label={label}
+      />
+    );
+  }
+
   return (
     <div className={`${width} ${height}`}>
       <img
