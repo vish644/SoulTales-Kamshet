@@ -41,7 +41,7 @@ const Hero = () => {
 
         {/* Overlapping torn/squiggle edge — sits ON TOP of the seam, above the video */}
         <div
-          className="absolute inset-y-0 z-20 hidden lg:block"
+          className="absolute inset-y-0 z-20 hidden lg:block "
           style={{
             left: "calc(60% - 60px)", // shift left of the seam so the tear overlaps both panels
             width: "120px", // just wide enough to cover the torn-edge graphic

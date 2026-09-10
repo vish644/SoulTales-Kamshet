@@ -5,7 +5,7 @@ import Button from "../common/Button";
 const WhatTheyDo = () => {
   return (
     <section>
-      <div className="flex flex-col md:flex-row items-stretch">
+      <div className="flex flex-col md:flex-row items-stretch max-w-360 mx-auto">
         {/* Image */}
         <div className="relative lg:w-1/2">
           <img
