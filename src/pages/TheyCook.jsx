@@ -9,7 +9,7 @@ import Button from "../common/Button";
 const TheyCook = () => {
   return (
     <section>
-      <div className="max-w-360 mx-auto flex flex-col md:flex-row items-center  gap-8 lg:gap-10 px-6 sm:px-10 py-10 sm:py-14 lg:py-16">
+      <div className="max-w-360 mx-auto flex flex-col md:flex-row items-center  gap-8 lg:gap-10 p-16">
         {/* Left: copy */}
         <div className="max-w-2xl flex flex-col gap-2 lg:gap-5 order-2 md:order-1">
           <p className="text-secondary font-semibold font-heading text-base sm:text-lg lg:text-2xl">
@@ -73,8 +73,8 @@ const TheyCook = () => {
         </div>
 
         {/* Right: image collage */}
-        <div className="relative w-full aspect-square  sm:max-w-sm lg:max-w-lg mx-auto md:mx-0 order-1 md:order-2">
-          <div className="absolute inset-0 w-full sm:w-[90%] overflow-hidden">
+        <div className="relative w-full aspect-square  sm:max-w-sm lg:max-w-xl mx-auto md:mx-0 order-1 md:order-2">
+          <div className="absolute inset-0 w-full  overflow-hidden">
             <img
               src={TheyCookImg}
               alt="Boy with backpack at a hillside lookout beside a Kamshet signpost, hills and lake behind him"
