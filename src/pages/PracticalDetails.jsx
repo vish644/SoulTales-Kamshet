@@ -39,40 +39,40 @@ const PracticalDetails = () => {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Left column */}
         <div className="flex flex-col">
-          <h2 className="font-body text-[28px] font-extrabold leading-tight text-black md:text-[32px] lg:text-[38px]">
+          <h2 className="font-body text-[28px] font-bold leading-tight text-black md:text-[32px] lg:text-[38px] leading-12 tracking-normal">
             The Practical Bit
           </h2>
 
           <div className="mt-6 flex flex-col gap-4 text-sm leading-relaxed text-neutral-800 md:text-[15px] lg:text-base">
-            <p className="text-neutral-800">
-              <span className="font-bold text-black">Included:</span> three
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
+              <span className="font-bold text-black text-sm leading-6 tracking-normal">Included:</span> three
               nights' stay, all meals, return transport from Pune, all
               materials, facilitation, water safety equipment, first aid and
               insurance.
             </p>
 
-            <p className="text-neutral-800">
-              <span className="font-bold text-black">Not included:</span>{" "}
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
+              <span className="font-bold text-black text-sm leading-6 tracking-normal">Not included:</span>{" "}
               anything you send them with.
             </p>
 
-            <p className="text-neutral-800">
-              <span className="font-bold text-black">Getting there:</span> we
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
+              <span className="font-bold text-black text-sm leading-6 tracking-normal">Getting there:</span> we
               travel together by bus from a Pune pickup point on Thursday
               morning. The pickup point and timing are confirmed about a week
               before departure. On Sunday you drive up yourself for the last
               morning and take your child home after lunch.
             </p>
 
-            <p className="text-neutral-800">
-              <span className="font-bold text-black">Payment:</span> full
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
+              <span className="font-bold text-black text-sm leading-6 tracking-normal">Payment:</span> full
               payment confirms the seat. There's no deposit-and-balance,
               because it complicates things for everyone.
             </p>
 
             <div>
-              <p className="font-bold text-black">If you need to cancel:</p>
-              <ul className="mt-2 list-disc space-y-1.5 pl-5 text-neutral-800">
+              <p className="font-bold text-black text-sm leading-6 tracking-normal">If you need to cancel:</p>
+              <ul className="mt-2 list-disc space-y-1.5 pl-5 text-neutral-800 text-sm leading-6 tracking-normal">
                 <li>
                   More than 30 days before departure - full refund, less
                   ₹1,500 towards administration
@@ -85,14 +85,14 @@ const PracticalDetails = () => {
               </ul>
             </div>
 
-            <p className="text-neutral-800">
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
               If your child can't come for a medical reason and you send us a
               doctor's note, we'll hold the full amount as credit against a
               future Young SoulTales programme.
             </p>
 
-            <p className="text-neutral-800">
-              <span className="font-bold text-black">What to bring:</span> a
+            <p className="text-neutral-800 text-sm leading-6 tracking-normal">
+              <span className="font-bold text-black text-sm leading-6 tracking-normal">What to bring:</span> a
               proper list comes once you're booked. Nothing needs buying -
               old clothes are better than new ones, and everything they wear
               will get clay on it.
@@ -119,13 +119,13 @@ const PracticalDetails = () => {
               flex flex-wrap justify-between gap-2
               rounded-xl bg-white p-2 shadow-lg
               md:bottom-6 md:-left-4 md:-right-4 md:gap-0 md:p-3
-              lg:-left-8 lg:-right-8 lg:p-4
+              lg:-left-8 lg:-right-8 lg:p-1
             "
           >
             {infoItems.map(({ icon: Icon, label, value }, i) => (
               <div
                 key={label}
-                className={`flex flex-1 min-w-[45%] items-center gap-2 px-2 py-1.5 md:min-w-0 md:gap-3 md:px-4 md:py-2 ${
+                className={`flex flex-1 min-w-[45%] items-center gap-2 px-2 py-1.5 md:min-w-0 md:gap-3 md:px-4 md:py-2  ${
                   i !== 0 ? "md:border-l md:border-neutral-200" : ""
                 }`}
               >

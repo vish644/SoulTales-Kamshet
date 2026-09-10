@@ -144,7 +144,7 @@ const PolaroidStack = ({ images = [], intervalMs = 3200, className = "" }) => {
         return (
           <div
             key={image.src || i}
-            className="absolute w-[76%] rounded-[2px] bg-white p-2 shadow-xl transition-all duration-700 ease-in-out md:p-2.5"
+            className="absolute w-[66%] rounded-[2px] bg-white p-2 pb-4 shadow-xl transition-all duration-700 ease-in-out md:p-2.5 md:pb-4"
             style={{
               top: slot.top,
               left: slot.left,

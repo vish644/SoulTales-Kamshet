@@ -34,10 +34,8 @@
 // export default StampBadge;
 
 
-
 // src/components/StampBadge.jsx
-// src/components/StampBadge.jsx
-import React from "react";
+import React, { useId } from "react";
 
 /**
  * Organic "blob" badge, traced from the reference artwork's actual pixel
@@ -47,6 +45,13 @@ import React from "react";
  * Two SVGs stacked: a lighter "back" shape (its own traced outline, not a
  * scaled copy of the front) peeking out as the rim, and a darker "front"
  * shape on top holding the text.
+ *
+ * Animation: the back (lighter) shape orbits in a small clockwise circle
+ * while the front (darker, text-bearing) shape stays fixed in place. That
+ * relative motion is what makes the lighter rim continuously "travel"
+ * around the badge's edge (full loop ~1s). The front shape and the text
+ * stay visually still, matching the source, since only the SVG back path
+ * is transformed.
  */
 const BACK_PATH =
   "M 95 67 C 89 72.5, 79.5 83.3, 75 90 C 70.5 96.7, 69.7 101.2, 68 107 " +
@@ -83,14 +88,25 @@ const StampBadge = ({
   backColor = "#8BAA93",
   rotate = "-rotate-3",
   className = "",
+  animate = true,
 }) => {
+  // Unique per-instance class so multiple badges on a page don't collide,
+  // while still sharing the same @keyframes definition.
+  const uid = useId().replace(/:/g, "");
+  const animClass = `stampbadge-wobble-${uid}`;
+
   return (
     <div
-      className={`relative ${rotate} ${className}`}
-      style={{ width: "260px", aspectRatio: "194 / 172" }}
+      className={`relative w-32 md:w-[180px] ${rotate} ${className}`}
+      style={{ aspectRatio: "194 / 172" }}
     >
       <svg viewBox="60 40 205 187" className="absolute inset-0 h-full w-full overflow-visible">
-        <path fill={backColor} d={BACK_PATH} />
+        <path
+          className={animate ? animClass : undefined}
+          fill={backColor}
+          d={BACK_PATH}
+          style={{ transformBox: "fill-box", transformOrigin: "50% 50%" }}
+        />
         <path fill={frontColor} d={FRONT_PATH} />
       </svg>
 
@@ -102,6 +118,28 @@ const StampBadge = ({
           <span key={i}>{line}</span>
         ))}
       </p>
+
+      {animate && (
+        <style>{`
+          @keyframes ${animClass} {
+            0%   { transform: translate(0px, -4px); }
+            12.5%{ transform: translate(2.83px, -2.83px); }
+            25%  { transform: translate(4px, 0px); }
+            37.5%{ transform: translate(2.83px, 2.83px); }
+            50%  { transform: translate(0px, 4px); }
+            62.5%{ transform: translate(-2.83px, 2.83px); }
+            75%  { transform: translate(-4px, 0px); }
+            87.5%{ transform: translate(-2.83px, -2.83px); }
+            100% { transform: translate(0px, -4px); }
+          }
+          .${animClass} {
+            animation: ${animClass} 4s linear infinite;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .${animClass} { animation: none; }
+          }
+        `}</style>
+      )}
     </div>
   );
 };
@@ -114,4 +152,12 @@ export default StampBadge;
   the closest freely-available match used above — load it via:
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
   Swap in the exact font file if you have it and the match will be exact.
+
+  Animation note: traced from the uploaded reference clip by sampling it
+  frame-by-frame. The front (darker, text-bearing) shape is static; the
+  back (lighter) shape orbits it in a tiny ~4-unit-radius clockwise circle,
+  looping about once per second. That relative motion is what reveals more
+  or less of the lighter rim at different points around the edge, which is
+  the "bg color going round" effect. Pass `animate={false}` to render a
+  static badge.
 */

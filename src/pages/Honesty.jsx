@@ -8,15 +8,15 @@ const Honesty = () => {
     <section className="grid w-full grid-cols-1 bg-primary lg:grid-cols-2">
       {/* Left column - text content */}
       <div className="flex flex-col justify-center px-5 py-14 md:px-10 md:py-20 lg:px-20 lg:py-24">
-        <h2 className="font-body text-[26px] font-extrabold leading-tight text-white md:text-[32px] lg:text-[38px]">
+        <h2 className="font-body text-[26px] font-bold leading-tight text-white md:text-[32px] lg:text-[38px] leading-12">
           This Isn't For Every Child
         </h2>
 
-        <h3 className="mt-4 font-heading text-2xl font-medium text-secondary md:text-3xl lg:text-[32px]">
+        <h3 className="mt-4 font-heading text-xl leading-7 font-medium text-secondary md:text-2xl lg:text-[28px]">
           Honestly:
         </h3>
 
-        <div className="mt-5 flex flex-col gap-4 text-sm leading-relaxed text-muted md:text-[15px] lg:text-base">
+        <div className="mt-5 flex flex-col gap-4 text-sm leading-6 tracking-normal text-muted">
           <p>
             If your child is going through something significant right now -
             a loss, a big change at home, something they're struggling with -

@@ -22,7 +22,7 @@ export default function AccordionItem({ question, answer, isOpen, onToggle }) {
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
       >
-        <span className="font-body font-bold text-[15px] md:text-base text-primary">
+        <span className="font-body font-bold text-[15px] md:text-base text-primary leading-6 tracking-normal">
           {question}
         </span>
         <span className="shrink-0 text-secondary">
@@ -39,7 +39,7 @@ export default function AccordionItem({ question, answer, isOpen, onToggle }) {
           {answer.map((paragraph, i) => (
             <p
               key={i}
-              className="!text-[15px] md:!text-[16px] !leading-relaxed !text-slate-600 font-body font-normal"
+              className="!text-[15px] md:!text-[16px] !leading-relaxed !text-slate-600 font-body font-normal leading-6 tracking-normal"
             >
               {paragraph}
             </p>

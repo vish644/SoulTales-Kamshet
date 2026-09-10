@@ -83,11 +83,11 @@ export default function FAQ() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-10 md:py-20 lg:px-20 lg:py-24">
-        <span className="block font-heading text-secondary text-[26px] md:text-[30px] leading-none mb-3">
+        <span className="block font-heading text-secondary text-[24px] md:text-[28px] tracking-normal leading-none mb-3">
           Your worries, answered properly
         </span>
 
-        <h2 className="font-body font-extrabold text-black text-[28px] md:text-[36px] lg:text-[42px] leading-[1.15] max-w-3xl mb-10 md:mb-14">
+        <h2 className="font-body font-bold text-black text-[28px] md:text-[32px] lg:text-[38px] leading-[48px] tracking-normal max-w-3xl mb-10 md:mb-14">
           This Is The Part I'd Read First If I Were You.
         </h2>
 
