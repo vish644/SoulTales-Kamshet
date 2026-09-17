@@ -115,7 +115,7 @@
 import React from "react";
 import Button from "../common/Button";
 import bgImage from "../assets/bgImage.png";
-import heroVideo from "../assets/Kamshet_place_4.mp4";
+import heroVideo from "../assets/Kamshet_place_4_compressed.mp4";
 import Reveal from "../common/Reveal";
 import { useCallbackForm } from "../context/CallbackFormContext";
 
