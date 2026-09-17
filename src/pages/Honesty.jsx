@@ -22,7 +22,7 @@ const Honesty = () => {
         <div className="absolute inset-0 bg-primary lg:bg-primary/20" />
 
         <Reveal from="left" delay={0.75}>
-          <div className="relative z-10 w-full flex flex-col justify-center gap-3 sm:gap-6 text-white px-6 sm:px-10 py-8 sm:py-12 lg:py-16 lg:min-h-screen">
+          <div className="relative z-10 w-full flex flex-col justify-center gap-3 sm:gap-6 text-white px-6 sm:px-10 py-8 sm:py-12 lg:py-16 lg:min-h-screen lg:max-w-2xl">
             <h2 className="font-body text-[26px] font-bold md:text-[32px] lg:text-h1 leading-12">
               This Isn't For Every Child
             </h2>

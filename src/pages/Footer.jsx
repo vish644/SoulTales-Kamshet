@@ -70,14 +70,14 @@ export default function Footer() {
               href="tel:+919209180701"
               className="flex items-center gap-2 text-base font-semibold leading-none tracking-normal text-[#1A1A1A]"
             >
-              <img src={phoneCall1} size={16} className="text-[#EE7141]" />
+              <img src={phoneCall1} size={14} className="text-secondary" />
               +91 92091 - 80701
             </a>
             <a
               href="mailto:soul@youngsoultales.com"
               className="flex items-center gap-2 text-base font-semibold leading-none tracking-normal text-black"
             >
-              <img src={Mail} size={16} className="text-[#EE7141]" />
+              <img src={Mail} size={14} className="text-secondary" />
               soul@youngsoultales.com
             </a>
           </div>

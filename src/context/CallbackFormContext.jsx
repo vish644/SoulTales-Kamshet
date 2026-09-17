@@ -49,6 +49,13 @@ export const CallbackFormProvider = ({ children }) => {
               className="relative text-white w-full max-w-5xl max-h-[90vh] sm:max-h-[85vh] scrollbar-hide p-6 overflow-y-auto rounded-2xl"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Mobile-only close button — inside the modal, top-right */}
+              <button
+                className="sm:hidden absolute top-4 right-4 z-10 text-black bg-white/80 rounded-full w-8 h-8 flex items-center justify-center"
+                onClick={closeForm}
+              >
+                X
+              </button>
               <ContactForm onSuccess={closeForm} />
             </div>
           </div>,
