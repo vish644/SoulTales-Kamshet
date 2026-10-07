@@ -1,5 +1,5 @@
 import React from "react";
-import LastMorningImg from "../assets/LastMorning.png";
+import LastMorningImg from "../assets/LastMorning.JPG";
 import Button from "../common/Button";
 import Reveal from "../common/Reveal";
 import { useCallbackForm } from "../context/CallbackFormContext";

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "../common/Button";
-import PracticalDetailsImg from "../assets/PracticalDetails.png";
 import { infoItems } from "../data/data";
 import Reveal from "../common/Reveal";
 import { useCallbackForm } from "../context/CallbackFormContext";
+import PracticalDetailsImg from "../assets/PracticalBitImage.jpg";
 
 const PracticalDetails = () => {
   const { openForm } = useCallbackForm();
@@ -143,7 +143,7 @@ const PracticalDetails = () => {
                 key={label}
                 className={`flex min-w-0 items-center gap-1 px-1 py-1 sm:gap-2 sm:px-2 md:py-2 ${
                   i !== 0
-                    ? "border-l border-neutral-200 pl-1 sm:pl-2 md:pl-4"
+                    ? "md:border-l md:border-neutral-200 md:sm:pl-2 md:pl-4"
                     : ""
                 } ${i >= 2 ? "gap-0.5 px-0.5 sm:gap-2 sm:px-2" : ""}`}
               >

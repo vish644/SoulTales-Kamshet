@@ -1,6 +1,6 @@
 import Facebook from "../assets/Facebook.svg";
 import Youtube from "../assets/Youtube.svg";
-import Instagram from "../assets/Instagram.svg";
+import Instagram from "../assets/instagram-circle 1.svg";
 
 // Days
 import Thursday from "../assets/Thursday.svg";
@@ -9,14 +9,14 @@ import Saturday from "../assets/Saturday.svg";
 import Sunday from "../assets/Sunday.svg";
 
 // Images
-import Thursday1 from "../assets/Thursday1.png";
-import Thursday2 from "../assets/Thursday2.jpg";
-import Friday1 from "../assets/Friday1.jpg";
+import Thursday1 from "../assets/Thursday1.JPG";
+import Thursday2 from "../assets/Thursday2.JPG";
+import Friday1 from "../assets/Friday1.JPG";
 import Friday2 from "../assets/Friday2.jpg";
-import Saturday1 from "../assets/Saturday1.jpg";
-import Saturday2 from "../assets/SAturday2.jpg";
+import Saturday1 from "../assets/Saturday_1.JPG";
+import Saturday2 from "../assets/Saturday2.JPG";
 import Sunday1 from "../assets/Sunday1.jpg";
-import Sunday2 from "../assets/Sunday2.jpg";
+import Sunday2 from "../assets/Saunday2.JPG";
 
 //Practical Details svg's
 import Places from "../assets/Places.svg";
@@ -75,8 +75,8 @@ export const DAYS = [
       { src: Sunday2, alt: "Close-up of the finished piece on Thursday" },
     ],
     heading: "Sunday morning",
-    body: "And then they build a raft. Bamboo. Rope. Drums. Lashed together by children who, just three days earlier, didn’t know how to tie a knot that holds. Then comes the test.",
-    quote: " it’s already standing there",
+    body: "The whole camp builds one thing together",
+    quote: " It’s already standing there",
     footer: "And when you arrive,",
   },
 ];
@@ -105,23 +105,23 @@ export const navOptions = [
     href: "#hero",
   },
   {
-    name: "TheRetreat",
+    name: "The Retreat",
     href: "#retreat",
   },
   {
-    name: "WhatThey'llDo",
+    name: "What They'll Do",
     href: "#what-they-do",
   },
   {
-    name: "ForParents",
+    name: "For Parents",
     href: "#for-parents",
   },
   {
-    name: "AboutPreeti",
+    name: "About Preeti",
     href: "#founder",
   },
   {
-    name: "PracticalDetails",
+    name: "Practical Details",
     href: "#practical-details",
   },
 ];

@@ -12,7 +12,7 @@ const WhyItBuilt = () => {
       <div className="flex flex-col lg:flex-row ">
         {/* Image */}
         <Reveal from="left" delay={0.75} className="w-full lg:w-1/2 lg:flex ">
-          <div className="relative w-full h-full p-5 md:p-10 lg:p-0">
+          <div className="relative w-full h-full md:py-10 lg:p-0">
             <img
               src={WhyItsBuiltImg}
               alt="Children on an outdoor exploration trip in the forest"

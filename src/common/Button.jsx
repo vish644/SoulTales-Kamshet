@@ -3,7 +3,7 @@ import PhoneCall from "../assets/PhoneCall.svg";
 import SvgImage from "./SvgImage";
 
 const Button = ({
-  title = "Ask for a call",
+  title = "Register Now – ₹19,999",
   onClick,
   type,
   icon = true,
@@ -15,12 +15,12 @@ const Button = ({
       onClick={onClick}
       type="submit"
     >
-      <h3 className="font-body font-semibold text-xs sm:text-sm lg:text-base leading-4 tracking-[0.75px] uppercase text-white">
+      <h3 className="font-body font-semibold text-xs sm:text-sm lg:text-base leading-4 tracking-[0.75px] uppercase text-white text-nowrap">
         {title}
       </h3>
-      {icon && (
+      {/* {icon && (
         <SvgImage svgImage={PhoneCall} label="Offer" width="w-5" height="h-5" />
-      )}
+      )} */}
     </button>
   );
 };

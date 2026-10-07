@@ -1,25 +1,32 @@
 import React from "react";
 import Button from "../common/Button";
-import HonestyImg from "../assets/Honesty.png"; // replace with your actual image
+import HonestyImg from "../assets/Honesty.jpg";
 import bgImage from "../assets/bgImage.png";
+import mobileBgImage from "../assets/MobileHeroImage.png"; // swap for a Honesty-specific mobile asset if you have one
 import Reveal from "../common/Reveal";
 import { useCallbackForm } from "../context/CallbackFormContext";
 
 const Honesty = () => {
   const { openForm } = useCallbackForm();
   return (
-    <section className="relative grid w-full grid-cols-1 bg-primary lg:grid-cols-2 max-w-360 mx-auto">
+    <section className="relative grid w-full grid-cols-1 lg:grid-cols-2 max-w-360 mx-auto">
       {/* LEFT: navy bgImage panel + text — order-2 on mobile so it renders below the image */}
-      <div className="order-2 relative w-full lg:order-1 min-h-110 sm:min-h-100 lg:min-h-screen shrink-0 z-10 bg-primary">
+      <div className="order-2 relative w-full lg:order-1 min-h-110 sm:min-h-100 lg:min-h-screen shrink-0 z-10 -mt-8 sm:-mt-12 md:-mt-16 lg:mt-0">
+        {/* Texture — MOBILE/TABLET: dedicated mobile asset, torn edge baked into the top */}
         <div
-          className="absolute inset-0 h-full bg-no-repeat bg-cover bg-center lg:bg-left"
+          className="absolute inset-0 h-full bg-no-repeat bg-cover bg-top lg:hidden"
+          style={{
+            backgroundImage: `url(${mobileBgImage})`,
+          }}
+        />
+
+        {/* Texture — DESKTOP: original asset, left edge */}
+        <div
+          className="absolute inset-0 h-full bg-no-repeat bg-cover bg-left hidden lg:block"
           style={{
             backgroundImage: `url(${bgImage})`,
           }}
         />
-
-        {/* Subtle dark overlay so text stays readable regardless of crop */}
-        <div className="absolute inset-0 bg-primary lg:bg-primary/20" />
 
         <Reveal from="left" delay={0.75}>
           <div className="relative z-10 w-full flex flex-col justify-center gap-3 sm:gap-6 text-white px-6 sm:px-10 py-8 sm:py-12 lg:py-16 lg:min-h-screen lg:max-w-2xl">
@@ -61,7 +68,7 @@ const Honesty = () => {
       </div>
 
       {/* Right column - full-bleed image: order-1 on mobile so it renders above the text */}
-      <div className="order-1 h-80 w-full sm:h-80 md:h-145 lg:order-2 lg:h-auto lg:min-h-175 p-5 md:p-10 lg:p-0">
+      <div className="order-1 h-90 w-full sm:h-80 md:h-145 lg:order-2 lg:h-auto lg:min-h-175 ">
         <img
           src={HonestyImg}
           alt="Child smiling holding a cookie"

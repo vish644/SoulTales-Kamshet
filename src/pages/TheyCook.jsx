@@ -1,7 +1,7 @@
 import React from "react";
 import SvgImage from "../common/SvgImage";
 
-import TheyCookImg from "../assets/TheyCookImg.png";
+import Cook from "../assets/Cook.jpg";
 import spendTimeAlone from "../assets/SpendTimeAlone.svg";
 import noPhoneIcon from "../assets/NoPhone.svg";
 import Button from "../common/Button";
@@ -11,10 +11,10 @@ import { useCallbackForm } from "../context/CallbackFormContext";
 const TheyCook = () => {
   const { openForm } = useCallbackForm();
   return (
-    <section>
-      <div className="max-w-360 mx-auto flex flex-col lg:flex-row items-center gap-8 px-4">
+    <section className="mx-auto max-w-360">
+      <div className="flex flex-col lg:flex-row items-center">
         {/* Left: copy */}
-        <div className="w-full max-w-xl lg:max-w-2xl flex flex-col gap-2 lg:gap-5 order-2 lg:order-1 px-6 lg:py-14 ">
+        <div className="w-full flex flex-col gap-2 lg:gap-5 order-2 lg:order-1 px-6 pt-5 sm:px-10 lg:py-14 ">
           <Reveal from="left" delay={0.75} className="flex flex-col gap-5 ">
             <p className="font-heading text-secondary text-lg sm:text-2xl">
               They cook
@@ -48,7 +48,7 @@ const TheyCook = () => {
                   />
                 </div>
                 <h3 className="font-bold text-sm">They Spend Time Alone</h3>
-                <p className="text-sm   leading-relaxed">
+                <p className="text-sm leading-relaxed">
                   On one afternoon, each child sits by themselves for twenty
                   minutes. In sight of an adult, out of sight of each other.
                 </p>
@@ -83,7 +83,7 @@ const TheyCook = () => {
           <Reveal from="right" delay={0.75}>
             <div className="absolute inset-0 w-full overflow-hidden">
               <img
-                src={TheyCookImg}
+                src={Cook}
                 alt="Boy with backpack at a hillside lookout beside a Kamshet signpost, hills and lake behind him"
                 className="w-full h-full object-cover"
               />

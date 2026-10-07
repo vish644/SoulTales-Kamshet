@@ -3,7 +3,7 @@ import Button from "../common/Button";
 
 //Images
 import NeverStopStackImg1 from "../assets/NeverStopStackImg1.jpg";
-import NeverStopStackImg2 from "../assets/NeverStopStackImg2.png";
+import NeverStopStackImg2 from "../assets/NeverStopStackImg2.jpg";
 import PolaroidStack from "../common/PolaroidStack";
 import StampBadge from "../common/StampBadge";
 import Reveal from "../common/Reveal";
@@ -17,17 +17,17 @@ const stackImages = [
 const Booking = () => {
   const { openForm } = useCallbackForm();
   return (
-    <section className="w-full bg-white px-4 sm:px-5 md:px-10 lg:px-16 relative flex items-center">
-      <div className="bg-white w-full max-w-360 mx-auto flex justify-center lg:justify-end">
+    <section className="w-full bg-white relative flex items-center">
+      <div className="bg-white w-full max-w-360 mx-auto flex justify-center">
         <div className="w-full  lg:w-[85%] bg-pink px-5 py-10 sm:px-6 sm:py-12 md:px-10 md:py-16 lg:py-20 lg:px-10 relative overflow-visible">
-          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2 lg:gap-10">
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2 lg:gap-40">
             {/* Left - animated polaroid stack, bleeds onto white area on large screens */}
             <Reveal
               from="left"
               delay={0.75}
-              className="flex justify-center lg:justify-start lg:-ml-52 xl:-ml-52 2xl:-ml-32"
+              className="flex justify-center lg:justify-start lg:-ml-52 xl:-ml-52 2xl:-ml-60"
             >
-              <PolaroidStack images={stackImages} />
+              <PolaroidStack images={stackImages} className="" />
               <div className=" absolute -top-8 right-4 sm:-top-5 sm:right-6 block lg:hidden">
                 <StampBadge lines={["Never stop", "Exploring"]} />
               </div>
@@ -75,7 +75,7 @@ const Booking = () => {
                 </p>
               </div>
 
-              <div className="flex justify-center lg:justify-start  sm:block">
+              <div className="flex justify-center lg:justify-start hidden sm:block">
                 <Button title="Ask for a call" onClick={openForm} />
               </div>
 

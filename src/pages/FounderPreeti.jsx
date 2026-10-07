@@ -1,6 +1,7 @@
 import React from "react";
 import preetiImg from "../assets/Founder-Preeti.png";
 import bgImage from "../assets/bgImage.png";
+import mobileBgImage from "../assets/MobileHeroImage.png"; // swap for a section-specific mobile asset if you have one
 import Button from "../common/Button";
 import Reveal from "../common/Reveal";
 import { useCallbackForm } from "../context/CallbackFormContext";
@@ -11,19 +12,24 @@ const FounderPreeti = () => {
     <section className="relative overflow-hidden">
       <div className="max-w-360 mx-auto relative flex flex-col lg:flex-row items-stretch lg:max-h-screen">
         {/* Content panel — dark, textured background image with navy tint */}
-        <div className="relative w-full lg:w-1/2 min-h-130 sm:min-h-145 lg:min-h-0 overflow-hidden order-2 lg:order-1 z-10">
+        <div className="relative w-full lg:w-1/2 min-h-130 sm:min-h-145 lg:min-h-0 overflow-hidden order-2 lg:order-1 z-10 -mt-8 sm:-mt-12 md:-mt-32 lg:mt-0">
+          {/* Texture — MOBILE/TABLET: dedicated mobile asset, torn edge baked into the top */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${bgImage})` }}
+            className="absolute inset-0 -top-3 bg-no-repeat bg-cover bg-top lg:hidden"
+            style={{ backgroundImage: `url(${mobileBgImage})` }}
           />
 
-          <div className="absolute inset-0 bg-primary lg:bg-primary/20" />
+          {/* Texture — DESKTOP: original asset, centered */}
+          <div
+            className="absolute inset-0 bg-cover bg-center hidden lg:block"
+            style={{ backgroundImage: `url(${bgImage})` }}
+          />
 
           <Reveal
             from="top"
             delay={0.75}
             className={
-              "relative z-10 h-full p-6 text-white sm:px-10 sm:py-8 lg:px-16 max-w-3xl flex flex-col justify-center gap-4"
+              "relative z-10 h-full p-6 text-white sm:px-10 sm:py-8 lg:px-16 max-w-3xl flex flex-col justify-center gap-4 pt-10 md:pt-20 lg:pt-0"
             }
           >
             <h1>Who Is Running This</h1>
@@ -49,7 +55,7 @@ const FounderPreeti = () => {
 
             <p className="text-sm sm:text-base leading-relaxed">
               On this retreat there will be 5 adults living with the children -
-              me and 4 volunteers - plus Mehul, who is photographing and
+              me and 4 facilitators- plus Mehul, who is photographing and
               filming. One adult sleeps close to each group. Someone is awake
               and reachable all night, and it isn't me, because I need to be
               functional the next day.
@@ -84,11 +90,11 @@ const FounderPreeti = () => {
         />
 
         {/* Photo — flush against the panel, no margin/padding between them */}
-        <div className="relative w-full max-h-screen lg:w-1/2 aspect-4/3 lg:aspect-auto order-1 lg:order-2 p-5 md:p-10 lg:p-0">
+        <div className="relative w-full max-h-screen lg:w-1/2 aspect-4/3 lg:aspect-auto order-1 lg:order-2 ">
           <img
             src={preetiImg}
             alt="Preeti Toraskar standing outdoors among trees"
-            className="h-64 sm:h-80 w-full object-cover md:h-165 lg:h-screen"
+            className="h-full w-full object-cover md:h-165 lg:h-screen"
           />
         </div>
       </div>

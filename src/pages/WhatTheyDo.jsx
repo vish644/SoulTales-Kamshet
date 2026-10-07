@@ -1,5 +1,5 @@
 import React from "react";
-import WhyItsBuiltThisWayImg from "../assets/WhyItsBuiltThisWay.png";
+import WhyItsBuiltThisWayImg from "../assets/WhyItsBuiltThisWay.JPG";
 import Button from "../common/Button";
 import StampBadge from "../common/StampBadge";
 import Reveal from "../common/Reveal";
@@ -11,8 +11,8 @@ const WhatTheyDo = () => {
     <section>
       <div className="flex flex-col lg:flex-row items-stretch max-w-360 mx-auto">
         {/* Image */}
-        <Reveal from="left" delay={0.75} className="w-full lg:w-1/2">
-          <div className="relative p-5 md:p-10 lg:p-0 h-full">
+        <Reveal from="left" delay={0.75} className="w-full lg:w-1/2  lg:py-20">
+          <div className="relative  h-full">
             <img
               src={WhyItsBuiltThisWayImg}
               alt="Children on an outdoor exploration trip in the forest"

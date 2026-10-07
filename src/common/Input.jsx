@@ -22,9 +22,9 @@ const Input = ({
         <textarea
           id={name}
           placeholder={placeholder}
-          rows={5}
+          rows={4}
           {...register(name, rules)}
-          className={`w-full border-b-2 px-2 py-3 outline-none ${inputClassName}`}
+          className={`w-full border-b-2 px-2 py-3 outline-none resize-none ${inputClassName}`}
         />
       ) : (
         <input

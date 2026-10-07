@@ -7,10 +7,32 @@ const TheRetreat = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = DAYS[activeIndex];
 
-  const nextIndex = (activeIndex + 1) % DAYS.length;
+  const containerRef = useRef(null);
+  const buttonRefs = useRef([]);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const btn = buttonRefs.current[activeIndex];
+
+    if (container && btn) {
+      const containerRect = container.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      const offset =
+        btnRect.left -
+        containerRect.left -
+        (containerRect.width - btnRect.width) / 2;
+
+      container.scrollBy({
+        left: offset,
+        behavior: isFirstRender.current ? "auto" : "smooth",
+      });
+    }
+    isFirstRender.current = false;
+  }, [activeIndex]);
 
   return (
-    <section className="max-w-360 mx-auto  px-6 lg:px-10 flex flex-col gap-4 lg:gap-5">
+    <section className="max-w-360 mx-auto px-6 lg:px-10 flex flex-col gap-4 lg:gap-6 overflow-x-hidden">
       <h1 className="font-semibold ">What Actually Happens</h1>
 
       <div className="space-y-1 lg:space-y-2">
@@ -28,15 +50,18 @@ const TheRetreat = () => {
       </div>
 
       {/* Tabs — mobile: active + next only */}
-      <div className="flex sm:hidden gap-3 w-full">
-        {[activeIndex, nextIndex].map((index) => {
-          const day = DAYS[index];
+      <div
+        ref={containerRef}
+        className="flex sm:hidden gap-2 w-full overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth px-1"
+      >
+        {DAYS.map((day, index) => {
           const isActive = index === activeIndex;
           return (
             <button
               key={day.key}
+              ref={(el) => (buttonRefs.current[index] = el)}
               onClick={() => setActiveIndex(index)}
-              className={`relative cursor-pointer flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-md border flex-1 min-w-0 basis-0 ${
+              className={`relative cursor-pointer flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md border flex-none min-w-[90px] snap-center ${
                 isActive
                   ? "bg-primary border-primary"
                   : "bg-white border-gray-200 hover:border-secondary"
@@ -67,7 +92,7 @@ const TheRetreat = () => {
       </div>
 
       {/* Tabs — sm and up: full row, unchanged */}
-      <div className="hidden sm:flex sm:flex-wrap gap-4">
+      <div className="hidden sm:flex sm:flex-wrap gap-4 justify-center">
         {DAYS.map((day, index) => {
           const isActive = index === activeIndex;
           return (
@@ -105,14 +130,14 @@ const TheRetreat = () => {
       </div>
 
       {/* Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-16 items-center justify-center lg:max-w-4xl lg:mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-8 gap-8 lg:gap-16 items-center justify-center lg:max-w-4xl lg:mx-auto">
         {/* Overlapping polaroid photos */}
-        <div className="flex justify-center col-span-2">
-          <PolaroidStack images={active.photos} className="max-w-full" />
+        <div className="flex w-full justify-center lg:col-span-4">
+          <PolaroidStack images={active.photos} className="mx-auto" />
         </div>
 
         {/* Text */}
-        <div className="flex flex-col justify-center gap-2 lg:gap-4 col-span-4 lg:text-left">
+        <div className="flex flex-col items-center justify-center gap-2 lg:gap-4 lg:col-span-4 text-center lg:items-start lg:text-left">
           <h3 className="font-bold text-base lg:text-lg">{active.heading}</h3>
           <p className="leading-relaxed max-w-lg text-xs lg:text-base">
             {active.body}

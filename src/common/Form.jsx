@@ -182,7 +182,7 @@ const Form = ({ onSuccess }) => {
                   error={errors[data.name]}
                   className="text-white"
                   labelClassName="text-white/90"
-                  inputClassName="border-white/30 bg-transparent text-white placeholder-white/50 focus:border-white"
+                  inputClassName="border-white/30 bg-transparent text-white placeholder-white/50 focus:border-white "
                 />
               ))}
 

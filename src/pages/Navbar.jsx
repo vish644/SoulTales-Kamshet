@@ -31,7 +31,7 @@ const Navbar = () => {
               <li key={name}>
                 <a
                   href={href}
-                  className="font-body text-base font-medium text-black hover:text-secondary transition-colors tracking-widest"
+                  className="font-body text-base font-medium text-black hover:text-secondary transition-colors "
                 >
                   {name}
                 </a>
@@ -80,7 +80,7 @@ const Navbar = () => {
                   <a
                     href={href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block py-3 font-body text-sm font-medium text-black hover:text-secondary transition-colors border-b border-gray-50 last:border-none tracking-widest"
+                    className="block py-3 font-body text-sm font-medium text-black hover:text-secondary transition-colors border-b border-gray-50 last:border-none"
                   >
                     {name}
                   </a>

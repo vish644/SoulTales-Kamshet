@@ -70,7 +70,7 @@ const AppContent = () => {
       <Footer />
 
       {/* Fixed bottom bar — CTA button + WhatsApp, mobile only */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between gap-3 bg-white/10 px-4 py-3 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] sm:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between gap-3 bg-white px-4 py-5 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] sm:hidden">
         <Button className="flex-1" onClick={openForm} />
         <motion.a
           href="https://wa.me/919209180701"
